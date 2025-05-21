@@ -1,124 +1,303 @@
+/* Global Styles - iOS Inspired */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    padding: 0; /* Remove default padding, container will handle it */
+    background-color: #f0f0f7; /* iOS-like light gray background */
+    color: #1c1c1e; /* iOS primary text color (dark gray) */
+    line-height: 1.5;
+    font-size: 17px; /* Common iOS base font size */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit browsers */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1000px;
-    margin: auto;
-    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
 }
 
-h1, h2 {
-    color: #333;
+header {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e5e5ea; /* Subtle separator */
 }
 
-h1 {
-    color: #007bff;
+header h1 {
+    color: #007aff; /* iOS blue */
+    font-size: 28px; /* Prominent title */
+    font-weight: 600;
+    margin: 0;
+}
+header h1 .fas, header h1 .fa-dice-d20, header h1 .fa-trophy, header h1 .fa-edit, header h1 .fa-user-plus { /* Adjust if using Font Awesome for main title icon */
+    margin-right: 8px;
 }
 
-.section {
-    background: #fff;
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1c1c1e;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5ea; /* Subtle separator for section titles */
+}
+
+h2 .fas {
+    margin-right: 10px;
+    color: #007aff; /* Icon color matches accent */
+}
+
+/* Card Styling - iOS like grouped table view cells */
+.card {
+    background: #ffffff; /* White background for cards */
     padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px; /* iOS like rounded corners */
+    border: 1px solid #d1d1d6; /* Subtle border for cards */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Form Elements - iOS Style */
+.form-group {
     margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
 }
 
-input[type="text"], input[type="number"], select {
-    width: calc(100% - 22px); /* Full width minus padding and border */
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Important for width calculation */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #3c3c43; /* Slightly lighter text for labels */
+    font-size: 15px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-table {
+input[type="text"],
+input[type="number"],
+select.select-dropdown {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    padding: 12px 16px;
+    border: 1px solid #c7c7cc; /* iOS input border color */
+    border-radius: 8px; /* Rounded inputs */
+    box-sizing: border-box;
+    font-size: 17px;
+    background-color: #ffffff;
+    color: #1c1c1e;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #aeaeb2; /* iOS placeholder color */
 }
 
-th {
-    background-color: #007bff;
-    color: white;
+input[type="text"]:focus,
+input[type="number"]:focus,
+select.select-dropdown:focus {
+    border-color: #007aff; /* Focus border color (iOS blue) */
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+    outline: none;
+}
+
+/* Button Styles - iOS Style */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500; /* Medium weight for button text */
     text-align: center;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px; /* Ensure buttons have a decent minimum width */
 }
 
-td {
-    background-color: #f9f9f9;
+.btn .fas {
+    margin-right: 8px;
 }
 
-tr:nth-child(even) td {
-    background-color: #efefef;
+.btn-primary {
+    background-color: #007aff; /* iOS blue */
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #005ecb; /* Darker blue on hover */
 }
 
-.avatar-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    vertical-align: middle;
+.btn-success {
+    background-color: #34c759; /* iOS green */
+    color: white;
+}
+.btn-success:hover {
+    background-color: #2ca048; /* Darker green on hover */
+}
+
+.btn-danger {
+    background-color: #ff3b30; /* iOS red */
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #d92c23; /* Darker red on hover */
+}
+
+.btn:active {
+    transform: scale(0.98); /* Slight scale down on press */
+}
+
+/* Score Entry Section */
+.score-entry-section .instructions {
+    font-size: 15px;
+    color: #636366; /* iOS secondary text color */
+    margin-bottom: 20px;
+    background-color: #f0f0f7; /* Match body background or slightly different */
+    border: 1px solid #e5e5ea;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.game-players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .player-score-entry {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    border: 1px solid #e5e5ea;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f7f7f7; /* Slightly off-white for individual entries */
 }
-
 .player-score-entry label {
-    flex-basis: 150px; /* Adjust as needed */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-weight: 500; /* Normal weight for these labels */
 }
 
-.player-score-entry select,
-.player-score-entry input[type="number"] {
-    flex-grow: 1;
-    width: auto; /* Override the general input width */
+.score-sum-message {
+    margin-top: 15px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+}
+.score-sum-message.error {
+    color: #ff3b30; /* iOS red */
+    background-color: rgba(255, 59, 48, 0.1);
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+.score-sum-message.success {
+    color: #34c759; /* iOS green */
+    background-color: rgba(52, 199, 89, 0.1);
+    border: 1px solid rgba(52, 199, 89, 0.3);
 }
 
-.delete-btn {
-    background-color: #dc3545;
+/* Rankings Table - iOS List Style */
+.table-responsive {
+    overflow-x: auto;
+    border: 1px solid #d1d1d6; /* Border around the table container */
+    border-radius: 10px;
+    background-color: #ffffff;
 }
-.delete-btn:hover {
-    background-color: #c82333;
+#rankingsTable {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between borders */
+    margin-top: 0; /* No margin as container has it */
+    font-size: 16px;
 }
 
-/* 奖牌/名次指示 */
-.rank-1 { font-weight: bold; color: gold; }
-.rank-2 { font-weight: bold; color: silver; }
-.rank-3 { font-weight: bold; color: #cd7f32; /* bronze */ }
+#rankingsTable th,
+#rankingsTable td {
+    border-bottom: 1px solid #e5e5ea; /* Separator lines between rows */
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+#rankingsTable tr:last-child td { /* Remove border for the last row */
+    border-bottom: none;
+}
+
+#rankingsTable th {
+    background-color: #f7f7f7; /* Light gray for table header */
+    color: #636366; /* Secondary text color for header */
+    font-weight: 500; /* Medium weight for headers */
+    text-align: center;
+    font-size: 15px;
+    border-bottom-width: 1px; /* Ensure header has a bottom border */
+}
+#rankingsTable th .fas {
+    margin-right: 6px;
+}
+
+/* No alternating row color for a cleaner iOS list look */
+/* #rankingsTable tbody tr:nth-child(even) { background-color: #f9f9f9; } */
+
+#rankingsTable tbody tr:hover {
+    background-color: rgba(0, 122, 255, 0.05); /* Subtle blue hover */
+}
+
+.avatar-img {
+    width: 44px; /* iOS standard touch target size related */
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0,0,0,0.05); /* Very subtle border */
+}
+
+/* Medal Colors (can be kept or adjusted) */
+.gold { color: #ffcc00; } /* iOS gold */
+.silver { color: #8e8e93; } /* iOS gray */
+.bronze { color: #cd7f32; }
+
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #e5e5ea;
+    font-size: 14px;
+    color: #8a8a8e; /* iOS tertiary text color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .btn {
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select.select-dropdown {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+    #rankingsTable th,
+    #rankingsTable td {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+    .avatar-img {
+        width: 40px;
+        height: 40px;
+    }
+    .game-players-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
