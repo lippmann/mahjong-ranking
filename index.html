@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将积分排名</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>麻友·记</h1>
+
+        <div class="section">
+            <h2>添加新用户</h2>
+            <input type="text" id="newPlayerName" placeholder="用户名称">
+            <input type="text" id="newPlayerAvatar" placeholder="头像URL (可选)">
+            <button onclick="addPlayer()">添加用户</button>
+        </div>
+
+        <div class="section" id="scoreEntrySection" style="display: none;">
+            <h2>记录本局分数 (四人)</h2>
+            <p>请确保已添加至少四名用户，并按东、南、西、北的顺序选择用户并输入分数。</p>
+            <div id="gamePlayersDiv">
+                </div>
+            <button onclick="recordGame()">记录本局</button>
+        </div>
+
+        <div class="section">
+            <h2>🏆 积分榜</h2>
+            <div>
+                <label for="sortCriteria">排序方式:</label>
+                <select id="sortCriteria" onchange="renderRankings()">
+                    <option value="totalScore">总分</option>
+                    <option value="averageScore">平均分</option>
+                    <option value="gamesPlayed">场次</option>
+                    <option value="wins">冠军次数</option>
+                </select>
+            </div>
+            <table id="rankingsTable">
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>头像</th>
+                        <th>名称</th>
+                        <th>场次</th>
+                        <th>总分</th>
+                        <th>平均分</th>
+                        <th>冠</th>
+                        <th>亚</th>
+                        <th>季</th>
+                        <th>殿</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
