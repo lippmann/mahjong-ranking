@@ -1,18 +1,20 @@
-/* Global Styles - iOS Inspired */
+/* Global Styles - Duolingo Inspired */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap'); /* Duolingo uses a similar rounded font */
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin: 0;
-    padding: 0; /* Remove default padding, container will handle it */
-    background-color: #f0f0f7; /* iOS-like light gray background */
-    color: #1c1c1e; /* iOS primary text color (dark gray) */
-    line-height: 1.5;
-    font-size: 17px; /* Common iOS base font size */
-    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit browsers */
+    padding: 0;
+    background-color: #e5f7ff; /* Duolingo uses a very light blue/off-white, sometimes with subtle patterns */
+    color: #4c4c4c; /* Dark gray for text, not quite black */
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px; /* Slightly narrower for a cozier feel */
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -20,248 +22,273 @@ body {
 
 header {
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 25px;
-    border-bottom: 1px solid #e5e5ea; /* Subtle separator */
+    padding: 25px 0;
+    margin-bottom: 30px;
 }
 
 header h1 {
-    color: #007aff; /* iOS blue */
-    font-size: 28px; /* Prominent title */
-    font-weight: 600;
+    color: #58a700; /* Duolingo Green */
+    font-size: 32px;
+    font-weight: 800; /* Bolder font weight */
     margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow for pop */
 }
-header h1 .fas, header h1 .fa-dice-d20, header h1 .fa-trophy, header h1 .fa-edit, header h1 .fa-user-plus { /* Adjust if using Font Awesome for main title icon */
-    margin-right: 8px;
+header h1 .fas {
+    margin-right: 10px;
 }
-
 
 h2 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #1c1c1e;
+    font-size: 24px;
+    font-weight: 700; /* Bold for section titles */
+    color: #3c3c3c;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e5e5ea; /* Subtle separator for section titles */
+    border-bottom: 2px solid #79d800; /* Green accent border */
+    display: flex; /* Align icon and text nicely */
+    align-items: center;
 }
 
 h2 .fas {
-    margin-right: 10px;
-    color: #007aff; /* Icon color matches accent */
+    margin-right: 12px;
+    color: #58a700; /* Duolingo Green for icons */
+    font-size: 1.2em; /* Slightly larger icons */
 }
 
-/* Card Styling - iOS like grouped table view cells */
+/* Card Styling - Playful and Rounded */
 .card {
-    background: #ffffff; /* White background for cards */
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 10px; /* iOS like rounded corners */
-    border: 1px solid #d1d1d6; /* Subtle border for cards */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 16px; /* More rounded corners */
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer, more prominent shadow */
 }
 
-/* Form Elements - iOS Style */
+/* Form Elements - Friendly Style */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #3c3c43; /* Slightly lighter text for labels */
-    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 700; /* Bolder labels */
+    color: #555;
+    font-size: 16px;
 }
 
 input[type="text"],
 input[type="number"],
 select.select-dropdown {
     width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #c7c7cc; /* iOS input border color */
-    border-radius: 8px; /* Rounded inputs */
+    padding: 14px 18px;
+    border: 2px solid #dcdcdc; /* Slightly thicker border */
+    border-radius: 12px; /* Rounded inputs */
     box-sizing: border-box;
     font-size: 17px;
-    background-color: #ffffff;
-    color: #1c1c1e;
+    font-family: 'Nunito', sans-serif; /* Ensure inputs use the theme font */
+    background-color: #fdfdfd;
+    color: #333;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 input[type="text"]::placeholder,
 input[type="number"]::placeholder {
-    color: #aeaeb2; /* iOS placeholder color */
+    color: #aaaaaa;
+    font-weight: 400;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 select.select-dropdown:focus {
-    border-color: #007aff; /* Focus border color (iOS blue) */
-    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+    border-color: #58a700; /* Duolingo Green focus */
+    box-shadow: 0 0 0 3px rgba(88, 167, 0, 0.2);
     outline: none;
 }
 
-/* Button Styles - iOS Style */
+/* Button Styles - Chunky and Playful */
 .btn {
-    padding: 12px 20px;
+    padding: 14px 25px; /* Larger padding */
     border: none;
-    border-radius: 8px;
+    border-radius: 12px; /* Rounded buttons */
     cursor: pointer;
-    font-size: 17px;
-    font-weight: 500; /* Medium weight for button text */
+    font-size: 18px;
+    font-weight: 700; /* Bold button text */
     text-align: center;
-    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    text-transform: uppercase; /* Often Duolingo buttons are uppercase */
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease, box-shadow 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 100px; /* Ensure buttons have a decent minimum width */
+    min-width: 120px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 .btn .fas {
-    margin-right: 8px;
+    margin-right: 10px; /* More space for icon */
 }
 
 .btn-primary {
-    background-color: #007aff; /* iOS blue */
+    background-color: #58a700; /* Duolingo Green */
     color: white;
+    border-bottom: 3px solid #4a8c00; /* 3D effect */
 }
 .btn-primary:hover {
-    background-color: #005ecb; /* Darker blue on hover */
+    background-color: #6cbf00;
+}
+.btn-primary:active {
+    border-bottom-width: 1px; /* Press down effect */
 }
 
+
 .btn-success {
-    background-color: #34c759; /* iOS green */
+    background-color: #1cb0f6; /* Duolingo Blue for secondary actions */
     color: white;
+    border-bottom: 3px solid #168cc4;
 }
 .btn-success:hover {
-    background-color: #2ca048; /* Darker green on hover */
+    background-color: #3ac1f7;
+}
+.btn-success:active {
+    border-bottom-width: 1px;
 }
 
 .btn-danger {
-    background-color: #ff3b30; /* iOS red */
+    background-color: #ff4b4b; /* Bright Red */
     color: white;
+    border-bottom: 3px solid #d93232;
 }
 .btn-danger:hover {
-    background-color: #d92c23; /* Darker red on hover */
+    background-color: #ff6a6a;
+}
+.btn-danger:active {
+    border-bottom-width: 1px;
 }
 
+
 .btn:active {
-    transform: scale(0.98); /* Slight scale down on press */
+    transform: translateY(2px); /* Press down effect */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 /* Score Entry Section */
 .score-entry-section .instructions {
-    font-size: 15px;
-    color: #636366; /* iOS secondary text color */
+    font-size: 16px;
+    color: #4c4c4c;
     margin-bottom: 20px;
-    background-color: #f0f0f7; /* Match body background or slightly different */
-    border: 1px solid #e5e5ea;
-    padding: 12px;
-    border-radius: 8px;
+    background-color: #f0fff0; /* Very light green tint */
+    border: 1px solid #a0e0a0;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
 .game-players-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
-    gap: 15px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* More gap */
+    margin-bottom: 25px;
 }
 
 .player-score-entry {
-    border: 1px solid #e5e5ea;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #f7f7f7; /* Slightly off-white for individual entries */
+    border: 1px solid #e0e0e0;
+    padding: 20px; /* More padding */
+    border-radius: 12px;
+    background-color: #f9f9f9;
 }
 .player-score-entry label {
-    font-weight: 500; /* Normal weight for these labels */
+    font-weight: 700;
 }
 
 .score-sum-message {
-    margin-top: 15px;
-    font-weight: 500;
-    padding: 12px;
-    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 700; /* Bolder */
+    padding: 15px;
+    border-radius: 12px;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
+    text-transform: uppercase;
 }
 .score-sum-message.error {
-    color: #ff3b30; /* iOS red */
-    background-color: rgba(255, 59, 48, 0.1);
-    border: 1px solid rgba(255, 59, 48, 0.3);
+    color: #ff4b4b;
+    background-color: #ffe0e0;
+    border: 2px solid #ff9090;
 }
 .score-sum-message.success {
-    color: #34c759; /* iOS green */
-    background-color: rgba(52, 199, 89, 0.1);
-    border: 1px solid rgba(52, 199, 89, 0.3);
+    color: #58a700;
+    background-color: #e8f8d8;
+    border: 2px solid #a0d860;
 }
 
-/* Rankings Table - iOS List Style */
+/* Rankings Table - More Playful List */
 .table-responsive {
     overflow-x: auto;
-    border: 1px solid #d1d1d6; /* Border around the table container */
-    border-radius: 10px;
+    border: none; /* Remove outer border, card provides container */
+    border-radius: 16px; /* Match card radius */
     background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Consistent shadow */
 }
 #rankingsTable {
     width: 100%;
-    border-collapse: collapse; /* Remove space between borders */
-    margin-top: 0; /* No margin as container has it */
+    border-collapse: collapse;
+    margin-top: 0;
     font-size: 16px;
 }
 
 #rankingsTable th,
 #rankingsTable td {
-    border-bottom: 1px solid #e5e5ea; /* Separator lines between rows */
-    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0; /* Lighter separators */
+    padding: 16px 18px; /* More padding in cells */
     text-align: left;
     vertical-align: middle;
 }
-#rankingsTable tr:last-child td { /* Remove border for the last row */
+#rankingsTable tr:last-child td {
     border-bottom: none;
 }
 
 #rankingsTable th {
-    background-color: #f7f7f7; /* Light gray for table header */
-    color: #636366; /* Secondary text color for header */
-    font-weight: 500; /* Medium weight for headers */
+    background-color: #f7f7f7;
+    color: #58a700; /* Green for table headers */
+    font-weight: 800; /* Very bold headers */
     text-align: center;
-    font-size: 15px;
-    border-bottom-width: 1px; /* Ensure header has a bottom border */
+    font-size: 16px;
+    text-transform: uppercase; /* Uppercase headers */
+    letter-spacing: 0.5px;
 }
 #rankingsTable th .fas {
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
-/* No alternating row color for a cleaner iOS list look */
-/* #rankingsTable tbody tr:nth-child(even) { background-color: #f9f9f9; } */
-
 #rankingsTable tbody tr:hover {
-    background-color: rgba(0, 122, 255, 0.05); /* Subtle blue hover */
+    background-color: #e8f8d8; /* Light green hover */
 }
 
 .avatar-img {
-    width: 44px; /* iOS standard touch target size related */
-    height: 44px;
+    width: 48px; /* Slightly larger avatars */
+    height: 48px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid rgba(0,0,0,0.05); /* Very subtle border */
+    border: 3px solid #ffffff; /* White border to pop from background */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15); /* Shadow for avatar */
 }
 
-/* Medal Colors (can be kept or adjusted) */
-.gold { color: #ffcc00; } /* iOS gold */
-.silver { color: #8e8e93; } /* iOS gray */
-.bronze { color: #cd7f32; }
+/* Medal Colors - Brighter */
+.gold { color: #ffc900; }
+.silver { color: #adb5bd; }
+.bronze { color: #e67e22; } /* More vibrant bronze/orange */
 
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
-    padding: 20px 0;
-    border-top: 1px solid #e5e5ea;
-    font-size: 14px;
-    color: #8a8a8e; /* iOS tertiary text color */
+    padding: 25px 0;
+    border-top: 1px solid #d0e0d0;
+    font-size: 15px;
+    color: #777;
+    font-weight: 600;
 }
 
 /* Responsive Adjustments */
@@ -273,24 +300,24 @@ footer {
         padding: 15px;
     }
     header h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
     h2 {
         font-size: 20px;
     }
     .btn {
-        padding: 10px 18px;
+        padding: 12px 20px;
         font-size: 16px;
     }
     input[type="text"],
     input[type="number"],
     select.select-dropdown {
-        padding: 10px 14px;
+        padding: 12px 16px;
         font-size: 16px;
     }
     #rankingsTable th,
     #rankingsTable td {
-        padding: 12px 10px;
+        padding: 12px 10px; /* Adjusted padding for smaller screens */
         font-size: 15px;
     }
     .avatar-img {
@@ -298,6 +325,6 @@ footer {
         height: 40px;
     }
     .game-players-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr;
     }
 }
